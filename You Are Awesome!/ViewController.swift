@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func qliqButton(_ sender: UIButton) {
-        messageLabel.text = "YOU ARE AWSOME"
+ //       messageLabel.text = "YOU ARE AWSOME"
+        messageLabel
         
         
     }
