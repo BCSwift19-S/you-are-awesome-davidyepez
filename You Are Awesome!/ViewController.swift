@@ -9,12 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    // code below executes when the apps view first loads
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
-
+    @IBAction func qliqButton(_ sender: UIButton) {
+        messageLabel.text = "YOU ARE AWSOME"
+        
+        
+    }
+    
+    @IBAction func otherMessage(_ sender: UIButton) {
+        messageLabel.text = "YOU ARE GREAT"
+    }
 }
 
