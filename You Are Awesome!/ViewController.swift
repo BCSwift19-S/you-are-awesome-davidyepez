@@ -17,9 +17,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showMessagePressed(_ sender: UIButton) {
-        let message1 = "You Are Awesome!"
-        let message2 = "You Are Great!"
-        let message3 = "You Are Amazing!"
+        let message1 = "You are Awesome!"
+        let message2 = "You are Great!"
+        let message3 = "You are Amazing!"
         
         
         if messageLabel.text == message1{
