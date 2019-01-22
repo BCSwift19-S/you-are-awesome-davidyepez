@@ -11,18 +11,33 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     
-    // code below executes when the apps view first loads
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
     @IBAction func showMessagePressed(_ sender: UIButton) {
-        messageLabel.text = "YOU ARE AWSOME"
+        
+        if messageLabel.text == "You Are Awesome!"{
+            messageLabel.text = "You Are Great!"
+        } else if messageLabel.text == "You Are Great!" {
+            messageLabel.text = "You Are Amazing!"
+        } else {
+            messageLabel.text = "You Are Awesome!"
+        }
+        
+        
+        
+        
+        
+        
+        
         
         
     }
     
+    
+    
 }
+
 
