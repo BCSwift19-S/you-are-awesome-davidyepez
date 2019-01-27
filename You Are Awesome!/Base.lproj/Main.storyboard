@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTz-Tu-sSu">
-                                <rect key="frame" x="132" y="168" width="151" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTz-Tu-sSu">
+                                <rect key="frame" x="132" y="166" width="151" height="30"/>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="showMessagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bl3-re-6Jp"/>
@@ -33,8 +32,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image0" translatesAutoresizingMaskIntoConstraints="NO" id="wby-jN-fSg">
+                                <rect key="frame" x="20" y="206" width="374" height="665"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="665" id="tnV-Rr-6HP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wby-jN-fSg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5WK-ln-Ygg"/>
+                            <constraint firstItem="wby-jN-fSg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AYZ-vo-2iV"/>
+                            <constraint firstItem="wby-jN-fSg" firstAttribute="top" secondItem="sTz-Tu-sSu" secondAttribute="bottom" constant="10" id="SKP-Dc-fNL"/>
+                            <constraint firstAttribute="bottom" secondItem="wby-jN-fSg" secondAttribute="bottom" constant="25" id="a7W-9b-dDh"/>
+                            <constraint firstAttribute="bottom" secondItem="wby-jN-fSg" secondAttribute="bottom" constant="25" id="gnD-jR-nnW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wby-jN-fSg" secondAttribute="trailing" constant="20" id="jvF-UY-Y52"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wby-jN-fSg" secondAttribute="trailing" constant="20" id="nLk-MG-l3O"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -46,4 +60,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image0" width="475" height="633"/>
+    </resources>
 </document>
