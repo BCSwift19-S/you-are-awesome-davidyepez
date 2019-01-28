@@ -63,8 +63,7 @@ class ViewController: UIViewController {
                    awesomePlayer.stop()
          
         }
-        
-        
+
         
         
     }
@@ -91,7 +90,7 @@ class ViewController: UIViewController {
         awesomeImageView.image = UIImage(named: "image\(imageIndex)")
         
         
-        
+//
 //        if soundSwitch.isOn == true{
         if soundSwitch.isOn {
             soundIndex = nonRepeatingRandom(lastNumber: soundIndex, maxValue: numberOfSounds)
