@@ -16,17 +16,46 @@ class ViewController: UIViewController {
    
     var awesomePlayer = AVAudioPlayer()
     var index = -1
+    var newIndex: Int = 0
     var imageIndex = -1
     var soundIndex = -1
     let numberOfImages = 10
     let numberOfSounds = 3
-    
 
     
     
     override func viewDidLoad() {
-        super.viewDidLoad() //
+        super.viewDidLoad()
     }
+    
+    func nonRepeatingRandom (lastNumber: Int, maxValue: Int) -> Int {
+        
+        repeat {
+            newIndex = Int.random(in: 0..<maxValue)
+        } while lastNumber == newIndex
+         return newIndex
+        
+    }
+    
+    
+    func playSound(soundName: String) {
+
+            
+            if let sound = NSDataAsset(name: soundName) {
+                
+                do {
+                    try awesomePlayer = AVAudioPlayer(data: sound.data)
+                    awesomePlayer.play()
+                } catch {
+                    print("ERROR: file \(soundName) didn't load.")
+                }
+                
+            } else {
+                print("ERROR: file \(soundName) didn't load.")
+            }
+        }
+        
+    
     
     @IBAction func showMessagePressed(_ sender: UIButton) {
         
@@ -40,44 +69,18 @@ class ViewController: UIViewController {
                         "You are da bomb!",
                         "Hey, fabulous!"]
     
-        var newIndex: Int
         
-        repeat {
-            newIndex = Int.random(in: 0..<messages.count)
-        } while index == newIndex
-        
-        index = newIndex
+        index = nonRepeatingRandom(lastNumber: index, maxValue: messages.count)
         messageLabel.text = messages[index]
         
-        repeat {
-            newIndex = Int.random(in: 0..<numberOfImages)
-        } while imageIndex == newIndex
-        
-        imageIndex = newIndex
+        imageIndex = nonRepeatingRandom(lastNumber: imageIndex, maxValue: numberOfImages)
         awesomeImageView.image = UIImage(named: "image\(imageIndex)")
         
+        soundIndex = nonRepeatingRandom(lastNumber: soundIndex, maxValue: numberOfSounds)
         
-        repeat {
-            newIndex = Int.random(in: 0..<numberOfSounds)
-        } while soundIndex == newIndex
+        let soundName = "sound\(soundIndex)"
+        playSound(soundName: soundName)
         
-        soundIndex = newIndex
-        
-        
-        var soundName = "sound\(soundIndex)"
-        
-        if let sound = NSDataAsset(name: soundName) {
-         
-            do {
-           try awesomePlayer = AVAudioPlayer(data: sound.data)
-                awesomePlayer.play()
-            } catch {
-                print("ERROR: file \(soundName) didn't load.")
-            }
-            
-        } else {
-            print("ERROR: file \(soundName) didn't load.")
-        }
         
         
     }
