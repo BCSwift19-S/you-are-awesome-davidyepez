@@ -39,8 +39,6 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
     func playSound(soundName: String, audioPlayer: inout AVAudioPlayer) {
 
             if let sound = NSDataAsset(name: soundName) {
